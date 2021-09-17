@@ -1,0 +1,27 @@
+
+{% extends './components/navbar.html' %}
+
+{% block content %}
+
+<div class="h-screen py-20 px-3">
+    <div class="container mt-10 border-radius-2 mx-auto">
+        <div class="max-w-sm mx-auto md:max-w-lg">
+            <div class="w-full">
+                <div class="bg-white flex-row justify-center align-center  h-64 py-3 rounded text-center">
+                    <h1 class="text-2xl mt-12 font-bold">MAIL Verification</h1>
+                    <div class="flex flex-col mt-4"> 
+                        <span>We had sent you a verification mail to </span> 
+                        <span class="font-bold">
+                            <h2> {{ email }} </h2>
+                        </span> 
+                    </div>
+                       
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

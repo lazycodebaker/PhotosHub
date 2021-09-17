@@ -1,0 +1,81 @@
+
+{%  load static %}
+
+
+<style>
+
+
+.gallery{
+    column-count: 3;    
+    --webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-width: 33%;    
+    --webkit-column-width: 33%;
+    -moz-column-width: 33%;
+
+    padding: 0 12px;
+}
+
+.gallery .image{
+    transition: all 350ms ease;
+    --webkit-transition: all 350ms ease;
+    cursor: pointer;
+    margin-bottom: 12px;          
+}
+
+
+.gallery .image:hover{
+    filter: opacity(0.9);            
+}
+
+
+@media (max-width : 991px){
+    .gallery{
+        column-count: 2;    
+        --webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-width: 33%;    
+        --webkit-column-width: 33%;
+        -moz-column-width: 33%;
+    }
+}
+
+
+@media (max-width : 480px){
+    .gallery{
+        column-count: 1;    
+        --webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-width: 100%;    
+        --webkit-column-width: 100%;
+        -moz-column-width: 100%;
+    }
+}
+
+
+</style>
+
+
+{% include './uploader.html' %}
+
+
+<div class="container px-4 py-20 my-auto mx-auto">
+    <div class="flex flex-col text-center w-full">                    
+        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-500">
+            Your Photos
+        </h1>
+    </div>
+</div>
+
+
+<div class='gallery'>
+
+    {% for photo in photos %}
+
+    <div class='photo' >
+        <img style="width: 100%;" src="{% static photo %}" class='image' />                                                                                   
+    </div>
+
+    {% endfor %}   
+
+</div>
