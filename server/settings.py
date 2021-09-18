@@ -2,6 +2,7 @@
 
 from pathlib import Path
 import os
+import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,6 +24,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'api.apps.ApiConfig',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -139,5 +141,4 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'anshumantiwaridec@gmail.com'
 EMAIL_HOST_PASSWORD = '14dec1999'
 
-
-
+django_heroku.settings(locals())
